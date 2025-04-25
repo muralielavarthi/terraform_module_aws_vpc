@@ -1,0 +1,14 @@
+Before cloud everything is on-premise data centers in companies
+
+Disadvantages of on-premise data centers:
+-----------------------------------------
+Physical space, physical security, networking, power, firewalls, linux admins,
+network admins, storage backups,disaster management, installing security updates and patching, severs cooling, maintaines
+
+Virtual private cloud (VPC):
+--------------------------
+1. An isolated project space where we can create resources for a project.
+2. we will have full control and access on this. 
+3. Other projects will not have access to this VPC, cloud has given this gurantee.
+4. Virtual private cloud means, logical seperation of physical severs.
+
