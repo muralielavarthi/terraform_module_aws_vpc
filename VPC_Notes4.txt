@@ -1,0 +1,8 @@
+VPC Naming convention
+======================
+- don't repeat resource type in vpc name like "expense-vpc
+- single VPC you are creating then name it as "this"
+- Always use singular nouns for names (private subnet, internet Gateway)
+- for human use "-" and for programs use "_"
+
+Module should be tested while developing it.

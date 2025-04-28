@@ -1,7 +1,9 @@
-resource "aws_vpc" "main" {
+# this module is not for a particular project, so we can use "this" or "main" but not "expense"
+
+resource "aws_vpc" "main" { 
   cidr_block       = var.vpc_cidr
-  enable_dns_hostnames = var.enable_dns_hostnames
-  instance_tenancy = "default"
+  enable_dns_hostnames = var.enable_dns_hostnames #need to check
+  instance_tenancy = "default" #need to check
 
   # expense-dev
   tags = merge(
