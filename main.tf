@@ -6,7 +6,7 @@ resource "aws_vpc" "main" {
   instance_tenancy = "default" #need to check
 
   # expense-dev
-  tags = merge(
+  tags = merge( # we can merge multiple maps
     var.common_tags,
     var.vpc_tags,
     {
