@@ -3,7 +3,9 @@
 resource "aws_vpc" "main" { 
   cidr_block       = var.vpc_cidr
   enable_dns_hostnames = var.enable_dns_hostnames #need to check
-  instance_tenancy = "default" #need to check
+  instance_tenancy = "default" #same hardaware is shared accross multiple projects, but there will be no security issues
+
+  # NASA kind of projects, they will not use shared hardware, they will ask to create separate hardware
 
   # expense-dev
   tags = merge( # we can merge multiple maps

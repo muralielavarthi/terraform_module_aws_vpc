@@ -22,9 +22,8 @@
      - public subnets will get traffic from Gateway
      - In public route table make an entry "0.0.0.0/0" and in target select our Gateway.
      - public subnet will have route to Internet Gateway and private subnet will not have route to internet Gateway.
-     - NAT Gateway: 
-       if you want to enable egress internet to the servers in private subnet, you should create NAT Gateway 
-       in public subnet and provide route to private subnets
+     - NAT Gateway: if you want to enable "egress internet" (to install packages) to the servers in private subnet, 
+        you should create NAT Gateway in public subnet and provide route to private subnets
      - if traffic coming to server --> ingress
      - if server is sending traffic to internet -->egress
      - we will create NAT Gateway in "expense-public-1a" subnet, but for this first we need static IP/elastic IP address.
@@ -36,5 +35,7 @@
 
 
 This is Minimum setup for VPC
+
+NAT meaning only egress traffic.
 
 
