@@ -31,13 +31,17 @@ resource "aws_subnet" "public" {
   vpc_id     = aws_vpc.main.id
   cidr_block = var.public_subnet_cidrs[count.index] # two iterate over the list
   availability_zone = local.az_names[count.index] # two iterate over the list
-  map_public_ip_on_launch = true
+  map_public_ip_on_launch = true 
+  # map_public_ip_on_launch = true ==>
+  # instances launched in public subnet should be assigned a public IP address
 
   tags = merge(
     var.common_tags,
     var.public_subnet_tags,
     {
       Name = "${local.resource_name}-public-${local.az_names[count.index]}"
+      # Name we, we will create based on available info, because users will created
+      # different names.
     }
   )
 }
