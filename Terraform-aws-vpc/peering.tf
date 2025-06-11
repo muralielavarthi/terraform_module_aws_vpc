@@ -3,7 +3,10 @@ resource "aws_vpc_peering_connection" "default" {
   
   vpc_id        = aws_vpc.main.id #requestor
   peer_vpc_id   = local.default_vpc_id #acceptor
-  auto_accept   = true
+  auto_accept   = true # since default vpc is present in same account.
+
+  # if other vpc is present in differnt account, then we can't set auto_accept, 
+  # we have manaul method for this.
 
   tags = merge(
     var.common_tags,
@@ -41,6 +44,5 @@ resource "aws_route" "default_peering" {
   destination_cidr_block    = var.vpc_cidr
   vpc_peering_connection_id = aws_vpc_peering_connection.default[count.index].id
 }
-
 
 

@@ -82,6 +82,7 @@ variable "database_route_table_tags" {
     default = {}
 }
 
+# peering is optional in VPC
 variable "is_peering_required" {
     default = false
 }
