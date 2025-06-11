@@ -1,5 +1,6 @@
 data "aws_availability_zones" "available" {
   state = "available"
+  # in provider file, we are already set the region
 }
 
 data "aws_vpc" "default" {
