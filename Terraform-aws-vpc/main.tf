@@ -61,6 +61,7 @@ resource "aws_subnet" "private" {
     }
   )
 }
+# In private subnets, they should not be public IP's
 
 # expense-dev-database-us-east-1a
 resource "aws_subnet" "database" {
@@ -92,12 +93,18 @@ resource "aws_nat_gateway" "example" {
     var.nat_gateway_tags,
     {
       Name = local.resource_name
+      # no need to repeat resouce type in naming convention.
+      # like expense-dev-nat
     }
   )
 
   # To ensure proper ordering, it is recommended to add an explicit dependency
   # on the Internet Gateway for the VPC.
+  # explictly we are mentioning the dependency 
   depends_on = [aws_internet_gateway.main]
+  # terraform will make sure internet gateway exists, and then it will create NAT Gateway
+  # in logical terms, without internet gateway there is no use of NAT Gateway
+  # the traffic to public subnet we will get it through internet gateway
 }
 
 resource "aws_route_table" "public" {
