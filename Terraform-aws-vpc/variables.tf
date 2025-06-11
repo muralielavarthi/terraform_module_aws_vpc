@@ -14,12 +14,13 @@ variable "enable_dns_hostnames" {
     default = true
 }
 
-# mandatoryt
+# mandatory
 variable "common_tags"{
     type = map
     #default = {}
 }
 
+# optional
 variable "vpc_tags" {
     default = {}
 }
