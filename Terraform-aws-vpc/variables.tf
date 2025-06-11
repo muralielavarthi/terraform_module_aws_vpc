@@ -14,7 +14,7 @@ variable "enable_dns_hostnames" {
     default = true
 }
 
-# mandatory
+# mandatoryt
 variable "common_tags"{
     type = map
     #default = {}
