@@ -1,6 +1,6 @@
 resource "aws_vpc_peering_connection" "default" {
   count = var.is_peering_required ? 1 : 0
-  
+  # if we set count means, it will be list data type, even with single value
   vpc_id        = aws_vpc.main.id #requestor
   peer_vpc_id   = local.default_vpc_id #acceptor
   auto_accept   = true # since default vpc is present in same account.
@@ -22,6 +22,8 @@ resource "aws_route" "public_peering" {
   route_table_id            = aws_route_table.public.id
   destination_cidr_block    = local.default_vpc_cidr
   vpc_peering_connection_id = aws_vpc_peering_connection.default[count.index].id
+
+  # since count is list,so we are using [count.index] here
 }
 
 resource "aws_route" "private_peering" {
