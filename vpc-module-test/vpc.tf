@@ -18,4 +18,5 @@ module "vpc" {
 
     # if some updates happened in the module, if you want that updates to your project
     # > terrafrom get-update - this will be download latest module code to your project
+    # module updates should be announced in readme file in your github.
 }
