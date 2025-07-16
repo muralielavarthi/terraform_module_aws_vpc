@@ -1,4 +1,4 @@
-# expense VPC Module
+# VPC Module
 
 **Inputs:**
 
