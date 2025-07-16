@@ -1,7 +1,7 @@
 resource "aws_instance" "this" {
   ami = var.ami_id
   instance_type = var.instance_type
-  vpc_security_group_ids = [var.sg_id]
+  vpc_security_group_ids = [aws_security_group.sg.id]
   tags ={
     Name="instance-public-subnet"
   }
@@ -11,7 +11,7 @@ resource "aws_instance" "this" {
 resource "aws_instance" "this2" {
   ami = var.ami_id
   instance_type = var.instance_type
-  vpc_security_group_ids = [var.sg_id]
+  vpc_security_group_ids = [aws_security_group.sg.id]
   tags ={
     Name="instance-private-subnet"
   }

@@ -5,7 +5,6 @@
 - vpc_cidr(Mandatory): User must supply
 - subnet_cidr(Mandatory): User must supply
 - ami_id(Mandatory): User must supply
-- sg_id(Mandatory): User must supply
 - instance_type(Mandatory): User must supply
 
 **Outputs:**
@@ -20,3 +19,4 @@
 - 1 Elastic IP
 - 1 NAT Gateway
 - 1 EC2 in public and private subnet
+- 1 Security group
