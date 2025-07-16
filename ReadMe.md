@@ -3,7 +3,8 @@
 **Inputs:**
 
 - vpc_cidr(Mandatory): User must supply
-- subnet_cidr(Mandatory): User must supply
+- public_subnet_cidr(Mandatory): User must supply
+- private_subnet_cidr(Mandatory): User must supply
 - ami_id(Mandatory): User must supply
 - instance_type(Mandatory): User must supply
 

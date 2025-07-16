@@ -2,9 +2,14 @@ variable "vpc_cidr" {
   type = string
 }
 
-variable "subnet_cidr" {
+variable "public_subnet_cidr" {
   type = string
 }
+
+variable "private_subnet_cidr" {
+  type = string
+}
+
 variable "ami_id" {
   type = string
 }
